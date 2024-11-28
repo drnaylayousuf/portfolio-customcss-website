@@ -1,0 +1,134 @@
+/* contact.css */
+
+/* Main Background */
+
+
+/* Contact Section Styling */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: #fbacc1;
+}
+
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-container .title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #82cfde;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-form-container form label {
+  font-size: 1.125rem;
+  font-weight: medium;
+  color: #d789be;
+}
+
+.contact-form-container form input,
+.contact-form-container form textarea {
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #82cfde;
+  border-radius: 8px;
+  outline: none;
+}
+
+.contact-form-container form input:focus,
+.contact-form-container form textarea:focus {
+  border-color: #cf6ba9;
+}
+
+.contact-form-container form button {
+  background-color: #d789be;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form-container form button:hover {
+  background-color: #ba609d;
+}
+
+/* Right side image */
+.contact-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.contact-image-container img {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .contact-form-container {
+    flex-direction: row;
+  }
+
+  .contact-form-container .form-left,
+  .contact-form-container .form-right {
+    width: 50%;
+  }
+
+  .contact-image-container {
+    width: 50%;
+  }
+
+  .contact-image-container img {
+    max-width: 80%;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-container {
+    padding: 2rem 1rem;
+  }
+
+  .contact-form-container .title {
+    font-size: 1.5rem;
+  }
+
+  .contact-form-container form {
+    gap: 1rem;
+  }
+
+  .contact-form-container form input,
+  .contact-form-container form textarea {
+    padding: 0.75rem;
+  }
+
+  .contact-form-container form button {
+    padding: 1rem;
+  }
+}

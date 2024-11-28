@@ -1,0 +1,227 @@
+/* Basic reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Flex container for centering */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #adebb3; /* Background color */
+  position: relative;
+}
+
+/* Circle container (Outer circle) */
+.circle-container {
+  width: 18rem; /* Default size */
+  height: 18rem; /* Default size */
+  max-width: 24rem; /* Max size */
+  max-height: 24rem; /* Max size */
+  border: 4px solid white; /* Border around the circle */
+  border-radius: 50%; /* Makes the container round */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Image container inside the circle */
+.circle-image-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Ensures the image stays round */
+  overflow: hidden; /* Crop image to fit the circle */
+  position: relative;
+}
+
+/* Image inside the circle (responsive) */
+.circle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Makes sure image fills the circle and doesn't distort */
+  animation: spin 10s linear infinite; /* Image spin animation */
+}
+
+/* Keyframes for spinning the image */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+   100% {
+    transform: rotate(360deg); 
+    
+  }
+}
+
+
+/* Navigation links around the circle */
+.nav-link {
+  position: absolute;
+  font-size: 2rem; /* Base size */
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+.nav-link i {
+  color: #40e0d0;
+}
+
+.nav-link.home {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4rem);
+  color: #40e0d0;
+}
+
+.nav-link.user {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(4rem);
+  color: #40e0d0;
+}
+
+.nav-link.code {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(4rem);
+  color: #40e0d0;
+}
+
+.nav-link.projects {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(-4rem);
+  color: #40e0d0;
+}
+
+/* Main Heading */
+.main-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(4rem);
+  animation: fadeInText 2s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+
+/* Keyframes for the fade-in effect */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+    color: #ffffff; /* Initial color (white) */
+
+  }
+
+
+  50% {
+    opacity: 1;
+    transform: translateY(10px) scale(1); /* Moves downward slightly */
+    color: #FF2436; /* Midway color (amber) */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(30px) scale(1); /* Moves down further */
+    color: #d68d93; /* Final color (red) */
+  }
+}
+
+/* Media Queries for Responsiveness (Small Screens) */
+@media screen and (max-width: 768px) {
+  .circle-container {
+    width: 14rem; /* Smaller circle */
+    height: 14rem; /* Smaller circle */
+  }
+
+  .circle-image-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .circle-image {
+    object-fit: cover;
+  }
+
+  .nav-link {
+    font-size: 1.5rem; /* Smaller icons on smaller screens */
+  }
+
+  .main-heading {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .circle-container {
+    width: 290px; /* Even smaller circle */
+    height: 300px;
+  }
+
+  .circle-image-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .circle-image {
+    object-fit: cover;
+  }
+
+  .nav-link {
+    font-size: 26px; /* Even smaller icons */
+  }
+
+
+
+   
+  .nav-link.home {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-2rem);
+    color: #40e0d0;
+  }
+  
+  .nav-link.user {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(2rem);
+    color: #40e0d0;
+  }
+  
+  .nav-link.code {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(2rem);
+    color: #40e0d0;
+  }
+  
+  .nav-link.projects {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(-2rem);
+    color: #40e0d0;
+  }
+
+
+
+
+  .main-heading {
+    font-size: 30px; /* Even smaller heading */
+    margin-top: 0.5rem;
+
+
+
+ 
+  }
+}
